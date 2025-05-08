@@ -9,14 +9,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 st.set_page_config(page_title="LLM Sentiment Analyzer", layout="wide")
 
-# Load LLM
 @st.cache_resource
 def load_llm():
     return pipeline("text2text-generation", model="google/flan-t5-base")
 
 llm = load_llm()
 
-# Load ML sentiment model and tools
 @st.cache_resource
 def load_sentiment_model():
     model = joblib.load(r"C:\Users\Ranwah\grad_depi\logistic_regression_model.pkl")
@@ -37,11 +35,11 @@ def predict_sentiment(text):
     }
     return label_name, descriptions.get(label_name, "")
 
-# Upload Section
+
 st.sidebar.header("Upload Your CSV")
 uploaded_file = st.sidebar.file_uploader("Upload a CSV file with a 'text' column", type=["csv"])
 
-# Load Data
+
 if uploaded_file:
     df = pd.read_csv(uploaded_file)
     if 'text' not in df.columns:
@@ -61,11 +59,10 @@ else:
         "rating": [5, 1, 3, 2, 5]
     })
 
-# App Title and Description
 st.title("Amazon Review LLM Analyzer")
 st.markdown("Get sentiment, emotion, and summary analysis using a local language model (FLAN-T5).")
 
-# Dataset Overview
+
 st.subheader("📊 Dataset Overview")
 col1, col2 = st.columns([2, 3])
 
@@ -87,7 +84,6 @@ with col2:
 
 st.markdown("---")
 
-# Sample Review Sentiment Buttons
 st.subheader("Sample Reviews with ML Sentiment")
 if "sample_reviews" not in st.session_state:
     st.session_state.sample_reviews = random.sample(df['text'].dropna().tolist(), min(5, len(df)))
@@ -115,7 +111,7 @@ for i, review in enumerate(sample_reviews):
 
 st.markdown("---")
 
-# Interactive LLM Tool
+
 st.subheader("Talk to the AI about a Review")
 review_input = st.text_area("Paste or type a review here:", height=120)
 
