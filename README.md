@@ -78,7 +78,6 @@ The `app.py` file provides a deployment solution for the sentiment analysis mode
   - matplotlib
   - seaborn
   - xgboost
-  - flask (for deployment)
 
 ### Running the Analysis
 1. Clone this repository
@@ -86,7 +85,7 @@ The `app.py` file provides a deployment solution for the sentiment analysis mode
 3. Run the Jupyter notebook `Final_Graduation_Project_Phase2_DEPI.ipynb`
 
 ### Running the Application
-To deploy the sentiment analysis model locally:
+To deploy the sentiment analysis model and LLM locally:
 ```bash
 python app.py
 ```
