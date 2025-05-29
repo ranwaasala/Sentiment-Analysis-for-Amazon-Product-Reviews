@@ -48,7 +48,20 @@ The analysis is structured into the following key stages:
 - Exploration of variable relationships through charts and graphs
 - Trend analysis across time periods and product categories
 
-### 3. Predictive Modeling
+### 3. Data Preparation
+- Text Cleaning & Preparation
+   Lowercasing, removal of URLs/HTML, punctuation, special characters, and numbers
+   Tokenization, stop words removal, contraction expansion
+- Feature Extraction
+   Splitting data into train, validation, and test sets
+   Conversion to numerical features using TF-IDF and CountVectorizer
+- Label Encoding & Scaling
+   Mapping sentiment labels (negative/neutral/positive) to numeric codes
+   Feature scaling with MaxAbsScaler on TF-IDF matrix
+- Data Balancing
+   Undersampling to ensure equal representation for all sentiment classes
+
+### 4. Predictive Modeling
 Multiple models were trained and evaluated:
 - Logistic Regression
 - Random Forest Classifier
@@ -58,7 +71,11 @@ Multiple models were trained and evaluated:
 - Naive Bayes
 - Model comparison using ROC-AUC curves
 
-### 4. Final Presentation & Interpretation
+### 5. Application Deployment
+- Built an interactive web app in Streamlit for real-time sentiment classification and visualization
+- Integrated the trained model and LLM for advanced review analysis (summarization, bias detection, emotion tagging)
+
+### 6. Final Presentation & Interpretation
 - Summary of data cleaning methodology
 - Key insights and findings
 - Model performance assessment
