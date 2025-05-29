@@ -50,16 +50,16 @@ The analysis is structured into the following key stages:
 
 ### 3. Data Preparation
 - Text Cleaning & Preparation
-   Lowercasing, removal of URLs/HTML, punctuation, special characters, and numbers
-   Tokenization, stop words removal, contraction expansion
+   * Lowercasing, removal of URLs/HTML, punctuation, special characters, and numbers
+   * Tokenization, stop words removal, contraction expansion
 - Feature Extraction
-   Splitting data into train, validation, and test sets
-   Conversion to numerical features using TF-IDF and CountVectorizer
+   * Splitting data into train, validation, and test sets
+   * Conversion to numerical features using TF-IDF and CountVectorizer
 - Label Encoding & Scaling
-   Mapping sentiment labels (negative/neutral/positive) to numeric codes
-   Feature scaling with MaxAbsScaler on TF-IDF matrix
+   * Mapping sentiment labels (negative/neutral/positive) to numeric codes
+   * Feature scaling with MaxAbsScaler on TF-IDF matrix
 - Data Balancing
-   Undersampling to ensure equal representation for all sentiment classes
+   * Undersampling to ensure equal representation for all sentiment classes
 
 ### 4. Predictive Modeling
 Multiple models were trained and evaluated:
